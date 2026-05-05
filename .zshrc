@@ -18,11 +18,13 @@ com() {
 pas() {
   setopt local_options pipe_fail
 
-  local err
+  local out err
+  out="$(mktemp)"
   err="$(mktemp)"
 
-  if FORCE_COLOR=1 CXX=g++-15 oj-bundle -I "$HOME/cp-library" "$1.cpp" 2> "$err" | pbcopy; then
-    rm -f "$err"
+  if FORCE_COLOR=1 CXX=g++-15 oj-bundle -I "$HOME/cp-library" "$1.cpp" > "$out" 2> "$err"; then
+    sed -E '/^#line[[:space:]]/d' "$out" | pbcopy
+    rm -f "$out" "$err"
   else
     cat "$err" >&2
     rm -f "$err"
