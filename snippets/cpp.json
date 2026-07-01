@@ -12,6 +12,7 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
+	// *** Type definition ***
 	"vector<int>": {
 		"prefix": "vi",
 		"body": [
@@ -34,6 +35,12 @@
 		"prefix": "vb",
 		"body": [
 			"vector<bool>"
+		]
+	},
+	"vector<char>": {
+		"prefix": "vc",
+		"body": [
+			"vector<char>"
 		]
 	},
 	"vector<string>": {
@@ -60,6 +67,12 @@
 			"vector<vector<bool>>"
 		]
 	},
+	"vector<vector<string>>": {
+		"prefix": "vvs",
+		"body": [
+			"vector<vector<string>>"
+		]
+	},
 	"vector<mint>": {
 		"prefix": "vm",
 		"body": [
@@ -78,10 +91,72 @@
 			"emplace_back"
 		]
 	},
-	"dxdy": {
-		"prefix": "dxdy",
+	// *** Constant ***
+	"4-neighborhood": {
+		"prefix": "dxdy4",
 		"body": [
 			"constexpr int dx[] = {0, -1, 0, 1}, dy[] = {1, 0, -1, 0};"
 		]
+	},
+	"8-neighborhood": {
+		"prefix": "dxdy8",
+		"body": [
+			"constexpr int dx[] = {0, -1, -1, -1, 0, 1, 1, 1}, dy[] = {1, 1, 0, -1, -1, -1, 0, 1};"
+		]
+	},
+	// *** Input ***
+	"input int": {
+		"prefix": "ii",
+		"body": [
+			"input<int>()"
+		],
+	},
+	"input lint": {
+		"prefix": "il",
+		"body": [
+			"input<lint>()"
+		],
+	},
+	"input ulint": {
+		"prefix": "iul",
+		"body": [
+			"input<ulint>()"
+		],
+	},
+	"input char": {
+		"prefix": "ic",
+		"body": [
+			"input<char>()"
+		],
+	},
+	"input string": {
+		"prefix": "is",
+		"body": [
+			"input<string>()"
+		],
+	},
+	"input vector<int>": {
+		"prefix": "ivi",
+		"body": [
+			"input<vector<int>>(${1:n})"
+		],
+	},
+	"input vector<lint>": {
+		"prefix": "ivl",
+		"body": [
+			"input<vector<lint>>(${1:n})"
+		],
+	},
+	"input vector<string>": {
+		"prefix": "ivs",
+		"body": [
+			"input<vector<string>>(${1:n})"
+		],
+	},
+	"input grid": {
+		"prefix": "igrid",
+		"body": [
+			"input<Grid>(${1:h}, ${2:w})"
+		],
 	},
 }
